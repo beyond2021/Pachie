@@ -1,27 +1,25 @@
 //
-//  Login.swift
-//  MultiLogin
+//  MultiloginView.swift
+//  Pachie
 //
-//  Created by Balaji on 20/08/22.
+//  Created by KEEVIN MITCHELL on 8/14/23.
 //
 
 import SwiftUI
-// MARK: Intergrating Apple Sign in
-// See My Apple Sign in Video For More Detail Procedure
-// Link in the Description
 import AuthenticationServices
 import GoogleSignIn
 import GoogleSignInSwift
 import Firebase
 
-struct Login: View {
+
+struct MultiloginView: View {
     @StateObject var loginModel: LoginViewModel = .init()
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 15) {
-                Image(systemName: "triangle")
-                    .font(.system(size: 38))
-                    .foregroundColor(.indigo)
+//                Image(systemName: "triangle")
+//                    .font(.system(size: 38))
+//                    .foregroundColor(.indigo)
                 
                 (Text("Welcome to Pachie,")
                     .foregroundColor(.black) +
@@ -31,7 +29,7 @@ struct Login: View {
                 .font(.title)
                 .fontWeight(.semibold)
                 .lineSpacing(10)
-                .padding(.top,20)
+              //  .padding(.top,20)
                 .padding(.trailing,15)
                 
                 // MARK: Custom TextField
@@ -51,7 +49,8 @@ struct Login: View {
                         .opacity(loginModel.showOTPField ? 1 : 0)
                         .padding(.trailing,15)
                     })
-                    .padding(.top,50)
+                    //.padding(.top,50)
+                    .padding(.top, 5)
                 
                 CustomTextField(hint: "OTP Code", text: $loginModel.otpCode)
                     .disabled(!loginModel.showOTPField)
@@ -81,8 +80,8 @@ struct Login: View {
                 Text("(OR)")
                     .foregroundColor(.gray)
                     .frame(maxWidth: .infinity)
-                    .padding(.top,30)
-                    .padding(.bottom,20)
+                  //  .padding(.top,30)
+                   // .padding(.bottom,20)
                     .padding(.leading,-60)
                     .padding(.horizontal)
                 
@@ -172,11 +171,10 @@ struct Login: View {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .fill(.black)
         }
+    
     }
 }
 
-struct Login_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    MultiloginView()
 }

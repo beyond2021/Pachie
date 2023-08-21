@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ForgorPasswordView: View {
-    @Binding var showSignup: Bool
+struct ForgotPasswordView: View {
+    @Binding var showReset: Bool
     //MARK: View Properties
     @State private var emailID: String = ""
     // Environment Properties
@@ -28,7 +28,7 @@ struct ForgorPasswordView: View {
            Text("Forgot Password")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
-                .padding(.top, 25)
+                .padding(.top, 5)
             Text("Please enter your email address so that we can send you a reset link")
                 .font(.caption)
                 .fontWeight(.semibold)
@@ -41,12 +41,19 @@ struct ForgorPasswordView: View {
 
                 //MARK: Sign up Button
                 GradientButton(title: "Send link", icon: "arrow.right") {
-                    dismiss()
+                    // Code after link is sent
+                    Task {
+                        dismiss()
+                        try await Task.sleep(nanoseconds: (0))
+                        ///showing the reset view
+                        showReset = true
+                    }
                     
                 }
                 .hSpacing(.trailing)
                 /// Disable until the data is entered
                 .disableWithOpacity(emailID.isEmpty)
+               
                 
             })
             .padding(.top, 20)

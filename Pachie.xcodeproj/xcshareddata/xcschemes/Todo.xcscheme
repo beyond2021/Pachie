@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22622D182A5D94F30023C9C1"
-               BuildableName = "Todo.app"
-               BlueprintName = "Todo"
-               ReferencedContainer = "container:Todo.xcodeproj">
+               BuildableName = "Pachie.app"
+               BlueprintName = "Pachie"
+               ReferencedContainer = "container:Pachie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22622D182A5D94F30023C9C1"
-            BuildableName = "Todo.app"
-            BlueprintName = "Todo"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            BuildableName = "Pachie.app"
+            BlueprintName = "Pachie"
+            ReferencedContainer = "container:Pachie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22622D182A5D94F30023C9C1"
-            BuildableName = "Todo.app"
-            BlueprintName = "Todo"
-            ReferencedContainer = "container:Todo.xcodeproj">
+            BuildableName = "Pachie.app"
+            BlueprintName = "Pachie"
+            ReferencedContainer = "container:Pachie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

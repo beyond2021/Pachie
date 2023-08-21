@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2206B6482A89950600ABF24C /* PageIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B6472A89950600ABF24C /* PageIntro.swift */; };
+		2206B64A2A899A5E00ABF24C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B6492A899A5E00ABF24C /* Home.swift */; };
+		2206B64C2A89A10100ABF24C /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B64B2A89A10100ABF24C /* CustomIndicatorView.swift */; };
+		2206B64E2A89A15300ABF24C /* CustomTextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B64D2A89A15300ABF24C /* CustomTextField2.swift */; };
+		2206B6522A8B1F8900ABF24C /* MultiloginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B6512A8B1F8900ABF24C /* MultiloginView.swift */; };
+		2206B6542A8DC47F00ABF24C /* SignUpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B6532A8DC47F00ABF24C /* SignUpButtonView.swift */; };
 		222D392F2A800ACC007D9F1C /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D392E2A800ACC007D9F1C /* PasswordResetView.swift */; };
 		2232337D2A85F3AE001F97A7 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 2232337C2A85F3AE001F97A7 /* GoogleSignIn */; };
 		2232337F2A85F3AE001F97A7 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2232337E2A85F3AE001F97A7 /* GoogleSignInSwift */; };
@@ -59,10 +65,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2206B6472A89950600ABF24C /* PageIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIntro.swift; sourceTree = "<group>"; };
+		2206B6492A899A5E00ABF24C /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2206B64B2A89A10100ABF24C /* CustomIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
+		2206B64D2A89A15300ABF24C /* CustomTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField2.swift; sourceTree = "<group>"; };
+		2206B6512A8B1F8900ABF24C /* MultiloginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiloginView.swift; sourceTree = "<group>"; };
+		2206B6532A8DC47F00ABF24C /* SignUpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtonView.swift; sourceTree = "<group>"; };
 		222D392E2A800ACC007D9F1C /* PasswordResetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
 		223CDF932A7F296A007C9157 /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		223DFB3C2A6DCDBF003D61BF /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		22622D192A5D94F30023C9C1 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22622D192A5D94F30023C9C1 /* Pachie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pachie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22622D1C2A5D94F30023C9C1 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
 		22622D1E2A5D94F30023C9C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22622D232A5D94F40023C9C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -124,6 +136,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2206B6442A89947D00ABF24C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2206B6462A8994AC00ABF24C /* Models */,
+				2206B6452A89948D00ABF24C /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2206B6452A89948D00ABF24C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2206B64D2A89A15300ABF24C /* CustomTextField2.swift */,
+				2206B64B2A89A10100ABF24C /* CustomIndicatorView.swift */,
+				2206B6492A899A5E00ABF24C /* Home.swift */,
+				2206B6512A8B1F8900ABF24C /* MultiloginView.swift */,
+				2206B6532A8DC47F00ABF24C /* SignUpButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2206B6462A8994AC00ABF24C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2206B6472A89950600ABF24C /* PageIntro.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		22622D102A5D94F30023C9C1 = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +176,7 @@
 		22622D1A2A5D94F30023C9C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22622D192A5D94F30023C9C1 /* Todo.app */,
+				22622D192A5D94F30023C9C1 /* Pachie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +184,7 @@
 		22622D1B2A5D94F30023C9C1 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				2206B6442A89947D00ABF24C /* Onboarding */,
 				22ED8F262A85D41700DC0026 /* MultiLogin */,
 				2275299C2A7F1F1400DE0C90 /* LoginKit */,
 				22F074B92A7753AE003DE671 /* Todo.entitlements */,
@@ -266,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22622D182A5D94F30023C9C1 /* Todo */ = {
+		22622D182A5D94F30023C9C1 /* Pachie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22622D272A5D94F40023C9C1 /* Build configuration list for PBXNativeTarget "Todo" */;
+			buildConfigurationList = 22622D272A5D94F40023C9C1 /* Build configuration list for PBXNativeTarget "Pachie" */;
 			buildPhases = (
 				22622D152A5D94F30023C9C1 /* Sources */,
 				22622D162A5D94F30023C9C1 /* Frameworks */,
@@ -278,7 +320,7 @@
 			);
 			dependencies = (
 			);
-			name = Todo;
+			name = Pachie;
 			packageProductDependencies = (
 				2232337C2A85F3AE001F97A7 /* GoogleSignIn */,
 				2232337E2A85F3AE001F97A7 /* GoogleSignInSwift */,
@@ -305,7 +347,7 @@
 				223233A92A85F3D0001F97A7 /* FirebaseStorageCombine-Community */,
 			);
 			productName = Todo;
-			productReference = 22622D192A5D94F30023C9C1 /* Todo.app */;
+			productReference = 22622D192A5D94F30023C9C1 /* Pachie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -323,7 +365,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22622D142A5D94F30023C9C1 /* Build configuration list for PBXProject "Todo" */;
+			buildConfigurationList = 22622D142A5D94F30023C9C1 /* Build configuration list for PBXProject "Pachie" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,7 +388,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22622D182A5D94F30023C9C1 /* Todo */,
+				22622D182A5D94F30023C9C1 /* Pachie */,
 			);
 		};
 /* End PBXProject section */
@@ -377,21 +419,27 @@
 				22622D1F2A5D94F30023C9C1 /* ContentView.swift in Sources */,
 				22D3DB552A6DB03700B58C03 /* TasksView.swift in Sources */,
 				223DFB3D2A6DCDBF003D61BF /* Task.swift in Sources */,
+				2206B64E2A89A15300ABF24C /* CustomTextField2.swift in Sources */,
 				2281E4C12A66F3B400624966 /* OffsetKey.swift in Sources */,
 				22622D322A5DD4F50023C9C1 /* Color.swift in Sources */,
 				22ED8F2A2A85D43800DC0026 /* Login.swift in Sources */,
+				2206B6482A89950600ABF24C /* PageIntro.swift in Sources */,
 				223CDF942A7F296A007C9157 /* CustomTF.swift in Sources */,
 				22622D372A5DDF4A0023C9C1 /* Date_Extensions.swift in Sources */,
 				22A645DA2A7F347000AF5C24 /* GradientButton.swift in Sources */,
+				2206B64C2A89A10100ABF24C /* CustomIndicatorView.swift in Sources */,
 				22D3DB532A6B740500B58C03 /* NewTaskView.swift in Sources */,
+				2206B6522A8B1F8900ABF24C /* MultiloginView.swift in Sources */,
 				22E394212A7F25F700E0A888 /* View+Extentions.swift in Sources */,
 				227AB1AC2A7F4AD600B5B1E0 /* SignUp.swift in Sources */,
 				22A4762B2A7F560E004E1676 /* ForgotPasswordView.swift in Sources */,
 				222D392F2A800ACC007D9F1C /* PasswordResetView.swift in Sources */,
 				22622D1D2A5D94F30023C9C1 /* TodoApp.swift in Sources */,
 				22ED8F2E2A85D46B00DC0026 /* LoginViewModel.swift in Sources */,
+				2206B64A2A899A5E00ABF24C /* Home.swift in Sources */,
 				22C3C8F72A8035D4000EFE02 /* OTPView.swift in Sources */,
 				22622D392A5DE3210023C9C1 /* HomeView.swift in Sources */,
+				2206B6542A8DC47F00ABF24C /* SignUpButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +629,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22622D142A5D94F30023C9C1 /* Build configuration list for PBXProject "Todo" */ = {
+		22622D142A5D94F30023C9C1 /* Build configuration list for PBXProject "Pachie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22622D252A5D94F40023C9C1 /* Debug */,
@@ -590,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22622D272A5D94F40023C9C1 /* Build configuration list for PBXNativeTarget "Todo" */ = {
+		22622D272A5D94F40023C9C1 /* Build configuration list for PBXNativeTarget "Pachie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22622D282A5D94F40023C9C1 /* Debug */,
