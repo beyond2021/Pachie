@@ -15,6 +15,8 @@ struct HomeView: View {
     @State private var currentWeekIndex: Int = 1
     @State private var createWeek: Bool = false
     @State private var createNewTask: Bool = false
+    // Profile
+    @State var showProfileView: Bool = false
     /// Animation Namespace
     @Namespace private var animation
     var body: some View {
@@ -68,10 +70,19 @@ struct HomeView: View {
         })
         .sheet(isPresented: $createNewTask, content: {
             NewTaskView()
-                .presentationDetents([.height(300)])
+                .presentationDetents([.height(500)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
                 .presentationBackground(.BG)
+        })
+        .sheet(isPresented: $showProfileView, content: {
+            DetailProfileView(showProfileView: $showProfileView)
+                .presentationDetents([.medium, .large])
+                .presentationCornerRadius(25)
+            /*
+             To acheive the complete hero effect we need to diable auto close
+             */
+                .interactiveDismissDisabled()
         })
     }
     
@@ -109,13 +120,22 @@ struct HomeView: View {
         }
         .hSpacing(.leading)
         .overlay(alignment: .topTrailing, content: {
-            Button(action: {}, label: {
-                Image(.pic)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 45, height: 45)
-                    .clipShape(.circle)
-            })
+            Image(.pic)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 45, height: 45)
+                .clipShape(.circle)
+                .onTapGesture {
+                    // Opening Profile
+                    showProfileView.toggle()
+                }
+//            Button(action: {}, label: {
+//                Image(.pic)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: 45, height: 45)
+//                    .clipShape(.circle)
+//            })
         })
         .padding(15)
         .background(.white)

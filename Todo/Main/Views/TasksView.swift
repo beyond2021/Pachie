@@ -13,6 +13,10 @@ struct TasksView: View {
     @Binding var currentDate: Date
     /// SwiftData Dynamic Query
     @Query private var tasks: [Work]
+    @StateObject var workViewModel: WorkViewModel = .init()
+   
+    // Smart Sorting
+ //   @State private var smartTasks: [Work]
     init(size: CGSize, currentDate: Binding<Date>) {
         self._currentDate = currentDate
         self.size = size
@@ -25,13 +29,16 @@ struct TasksView: View {
         }
         /// Sorting
         let sortDescriptor = [
-            SortDescriptor(\Work.creationDate, order: .forward)
+//            SortDescriptor(\Work.creationDate, order: .forward)
+            SortDescriptor(\Work.priority, order: .reverse)
         ]
         self._tasks = Query(filter: predicate, sort: sortDescriptor, animation: .snappy)
+       
+        
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
-            ForEach(tasks) { task in
+            ForEach(workViewModel.shedulrTasks(tasks: tasks, availableTime: 200)) { task in
                 TaskRowView(task: task)
                     .background(alignment: .leading) {
                         if tasks.last?.id != task.id {
@@ -54,6 +61,20 @@ struct TasksView: View {
                     .offset(y: (size.height - 50) / 2)
             }
         }
+    }
+    func shedulrTasks(tasks: [Work], availableTime: Int) -> [Work] {
+        var remainingTime = availableTime
+        var sheduleTasks: [Work] = []
+        // Sort task based on  priority Highest priority first
+        let sortedTasks = tasks.sorted{$0.priority > $1.priority}
+        for task in sortedTasks {
+            if task.duration <= remainingTime {
+                // shedule the task if it fits within the remaining time
+                sheduleTasks.append(task)
+                remainingTime -= task.duration
+            }
+        }
+        return sheduleTasks
     }
 }
 

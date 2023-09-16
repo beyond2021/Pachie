@@ -15,6 +15,8 @@ struct NewTaskView: View {
     @State private var taskTitle: String = ""
     @State private var taskDate: Date = .init()
     @State private var taskColor: String = "TaskColor 1"
+    @State private var taskPriority: String = ""
+    @State private var taskDuration: String = ""
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
             Button(action: {
@@ -29,10 +31,28 @@ struct NewTaskView: View {
             .hSpacing(.leading)
             VStack(alignment: .center, spacing: 8, content: {
                 Text("Task Title")
-                    .font(.caption)
+                    .font(.largeTitle)
                     .fontWeight(.semibold)//
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.black)
                 TextField("Go for a walk!", text: $taskTitle)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 15)
+                    .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
+                Text("Task Priority")
+                    .font(.title)
+                    .fontWeight(.semibold)//
+                    .foregroundStyle(.black)
+                TextField("Task priorty from 1 - 10", text: $taskPriority)
+                    .keyboardType(.numberPad)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 15)
+                    .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
+                Text("Length of task")
+                    .font(.title)
+                    .fontWeight(.semibold)//
+                    .foregroundStyle(.black)
+                TextField("How long will this task take in minutes!", text: $taskDuration)
+                    .keyboardType(.numberPad)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 15)
                     .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
@@ -87,8 +107,11 @@ struct NewTaskView: View {
             
             Spacer(minLength: 0)
             Button(action: {
+                // Conversion
+                let duration: Int = Int(taskDuration) ?? 0
+                let priority: Int = Int(taskPriority) ?? 0
                 // Saving Task!
-                let task = Work( taskTitle: taskTitle, creationDate: taskDate,  tint: taskColor)
+                let task = Work( taskTitle: taskTitle, creationDate: taskDate,  tint: taskColor, priority: priority, duration: duration)
                 do {
                     context.insert(task)
                     try context.save()
@@ -108,7 +131,7 @@ struct NewTaskView: View {
                     .padding(.vertical, 15)
                     .background(Color(taskColor), in: .rect(cornerRadius: 10))
             }
-            .disabled(taskTitle == "")
+            .disabled(taskTitle == "" )
             .opacity(taskTitle == "" ? 0.5 : 1)
         })
         .padding(15)

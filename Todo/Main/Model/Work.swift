@@ -15,13 +15,17 @@ class Work: Identifiable {
     var creationDate: Date
     var isCompleted: Bool
     var tint: String
+    var priority: Int // Higher values represents higher priority
+    var duration: Int // Duration in minutes
     
-    init(id: UUID = .init(), taskTitle: String, creationDate: Date = .init(), isCompleted: Bool = false, tint: String) {
+    init(id: UUID = .init(), taskTitle: String, creationDate: Date = .init(), isCompleted: Bool = false, tint: String, priority: Int, duration: Int){
         self.id = id
         self.taskTitle = taskTitle
         self.creationDate = creationDate
         self.isCompleted = isCompleted
         self.tint = tint
+        self.priority = priority
+        self.duration = duration
     }
     
     var tintColor: Color {
